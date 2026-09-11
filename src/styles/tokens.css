@@ -1,0 +1,28 @@
+:root {
+  --bg: #eef1f6;
+  --bg-panel: #e2e7f0;
+  --ink: #1b2430;
+  --ink-soft: #566073;
+  --line: #c7cfdc;
+  --accent-business: #2f5d62;
+  --accent-ai: #6c4ab6;
+  --accent-game: #b85c2a;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --measure: 68ch;
+  --radius: 3px;
+}
+
+[data-theme="dark"] {
+  --bg: #12141c;
+  --bg-panel: #1a1d28;
+  --ink: #e7e9f0;
+  --ink-soft: #9aa2b6;
+  --line: #2b2f3d;
+  --accent-business: #4fa8a0;
+  --accent-ai: #a385e8;
+  --accent-game: #e08a57;
+}
