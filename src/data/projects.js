@@ -191,3 +191,7 @@ export const contactInfo = {
   telegram: "m1strell",
   github: "guesti18921",
 };
+
+// Совместимость с первой версией компонентов портфолио.
+export const projects = projectsData;
+export const profile = profileData;
