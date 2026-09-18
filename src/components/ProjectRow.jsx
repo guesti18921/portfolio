@@ -34,11 +34,28 @@ export default function ProjectRow({ project, index }) {
             </span>
           ))}
         </div>
+
+        <div className="project-row__actions">
+          {project.liveUrl && (
+            <a className="project-row__link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              Открыть проект
+            </a>
+          )}
+          {project.repoUrl && (
+            <a className="project-row__link" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+              Открыть репозиторий
+            </a>
+          )}
+        </div>
       </div>
 
       <div className="project-row__demo" style={{ "--accent": accentVar }}>
-        {project.demoUrl ? (
-          <iframe src={project.demoUrl} title={project.title} loading="lazy" />
+        {project.image ? (
+          <a className="project-row__image-link" href={project.liveUrl || project.repoUrl || undefined}
+            target={project.liveUrl || project.repoUrl ? "_blank" : undefined}
+            rel={project.liveUrl || project.repoUrl ? "noopener noreferrer" : undefined}>
+            <img src={project.image} alt={project.title} className="project-row__image" />
+          </a>
         ) : (
           <div className="project-row__placeholder">
             <span className="mono-tag">{project.demoNote}</span>
