@@ -1,9 +1,10 @@
-import Hero from "./components/Hero";
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import { profile } from "./data/projects";
+import Home from "./pages/Home";
+import ProjectDetail from "./pages/ProjectDetail";
+import { profileData } from "./data/projects";
+import { useLanguage } from "./context/languageContext";
 
 function getInitialTheme() {
   const saved = localStorage.getItem("theme");
@@ -15,6 +16,7 @@ function getInitialTheme() {
 
 export default function App() {
   const [theme, setTheme] = useState(getInitialTheme);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -26,17 +28,15 @@ export default function App() {
   return (
     <>
       <Header theme={theme} onToggle={toggleTheme} />
-      <main>
-        <Hero />
-        <Projects />
-        <Contact />
-        <footer className="footer wrap">
-  <div className="footer__inner mono-tag">
-    <span>{profile.name}</span>
-    <span>{new Date().getFullYear()}</span>
-  </div>
-</footer>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+      </Routes>
+      <footer className="footer wrap">
+        <div className="footer__inner mono-tag">
+          <span>{profileData[lang].name}</span>
+        </div>
+      </footer>
     </>
   );
 }
