@@ -1,4 +1,7 @@
-export default function ProjectRow({ project, index }) {
+import { Link } from "react-router-dom";
+import { uiText } from "../data/projects";
+
+export default function ProjectRow({ project, index, lang }) {
   const reversed = index % 2 === 1;
   const accentVar = `var(--accent-${project.accent})`;
 
@@ -23,10 +26,6 @@ export default function ProjectRow({ project, index }) {
           </dl>
         )}
 
-        {project.formula && (
-          <p className="project-row__formula mono-tag">{project.formula}</p>
-        )}
-
         <div className="project-row__stack">
           {project.stack.map((s) => (
             <span key={s} className="chip" style={{ borderColor: accentVar }}>
@@ -36,14 +35,32 @@ export default function ProjectRow({ project, index }) {
         </div>
 
         <div className="project-row__actions">
+          <Link
+            className="project-row__link"
+            to={`/projects/${project.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {uiText[lang].detailsLabel}
+          </Link>
           {project.liveUrl && (
-            <a className="project-row__link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              Открыть проект
+            <a
+              className="project-row__link"
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {uiText[lang].liveLabel}
             </a>
           )}
           {project.repoUrl && (
-            <a className="project-row__link" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-              Открыть репозиторий
+            <a
+              className="project-row__link"
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {uiText[lang].repoLabel}
             </a>
           )}
         </div>
@@ -51,11 +68,13 @@ export default function ProjectRow({ project, index }) {
 
       <div className="project-row__demo" style={{ "--accent": accentVar }}>
         {project.image ? (
-          <a className="project-row__image-link" href={project.liveUrl || project.repoUrl || undefined}
-            target={project.liveUrl || project.repoUrl ? "_blank" : undefined}
-            rel={project.liveUrl || project.repoUrl ? "noopener noreferrer" : undefined}>
-            <img src={project.image} alt={project.title} className="project-row__image" />
-          </a>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="project-row__image"
+            loading="lazy"
+            draggable="false"
+          />
         ) : (
           <div className="project-row__placeholder">
             <span className="mono-tag">{project.demoNote}</span>

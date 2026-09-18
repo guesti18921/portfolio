@@ -71,7 +71,7 @@ export const projectsData = {
       formula: null,
       stack: ["JavaScript"],
       image: null,
-      liveUrl: null,
+      liveUrl: "https://iqnix-ptm-frontend-production.up.railway.app/",
       demoNote: "Демо появится позже.",
       repoUrl: null,
     },
@@ -192,10 +192,6 @@ export const contactInfo = {
   github: "guesti18921",
 };
 
-// Данные для первой версии компонентов портфолио.
-export const projects = projectsData.ru;
-export const profile = {
-  ...profileData.ru,
-  email: contactInfo.email,
-  telegram: contactInfo.telegram,
-};
+// Совместимость с первой версией компонентов портфолио.
+export const projects = projectsData;
+export const profile = profileData;
