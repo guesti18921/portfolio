@@ -20,7 +20,7 @@ export default function ProjectDetail() {
   const accentVar = `var(--accent-${project.accent})`;
   const shots = project.screenshots ?? [];
   const projectUrl = project.id === "iqnix-ptm"
-    ? "https://iqnix-ptm-frontend-production.up.railway.app/"
+    ? "https://iqnix.up.railway.app/"
     : project.liveUrl;
 
   return (
