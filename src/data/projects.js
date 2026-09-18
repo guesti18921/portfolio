@@ -52,7 +52,7 @@ export const projectsData = {
       stack: ["PHP 8.2", "Laravel 12", "MySQL 8", "React 19", "MUI 9"],
       image: iqnixPreview,
       screenshots: [iqnixPreview, iqnixOverview, iqnixDocument],
-      liveUrl: null,
+      liveUrl: "https://iqnix-ptm-frontend-production.up.railway.app/",
       demoNote: "Онлайн-версия приложения. Для работы требуется вход.",
       repoUrl: null,
     },
@@ -192,6 +192,10 @@ export const contactInfo = {
   github: "guesti18921",
 };
 
-// Совместимость с первой версией компонентов портфолио.
-export const projects = projectsData;
-export const profile = profileData;
+// Данные для первой версии компонентов портфолио.
+export const projects = projectsData.ru;
+export const profile = {
+  ...profileData.ru,
+  email: contactInfo.email,
+  telegram: contactInfo.telegram,
+};
