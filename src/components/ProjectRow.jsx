@@ -43,26 +43,6 @@ export default function ProjectRow({ project, index, lang }) {
           >
             {uiText[lang].detailsLabel}
           </Link>
-          {project.liveUrl && (
-            <a
-              className="project-row__link"
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {uiText[lang].liveLabel}
-            </a>
-          )}
-          {project.repoUrl && (
-            <a
-              className="project-row__link"
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {uiText[lang].repoLabel}
-            </a>
-          )}
         </div>
       </div>
 
