@@ -1,3 +1,7 @@
+import geraltHome from "../assets/geralt-home.png";
+import geraltAbout from "../assets/geralt-about.png";
+import geraltGallery from "../assets/geralt-gallery.png";
+import geraltWorld from "../assets/geralt-world.png";
 import iqnixPreview from "../assets/iqnix-resources.png";
 import iqnixOverview from "../assets/iqnix-overview.png";
 
@@ -97,7 +101,8 @@ export const projectsData = {
       ],
       formula: null,
       stack: ["PHP", "HTML", "CSS", "JavaScript"],
-      image: null,
+      image: geraltHome,
+      screenshots: [geraltHome, geraltAbout, geraltGallery, geraltWorld],
       liveUrl: "https://geralt-world.up.railway.app/",
       demoNote: "Геральт из Ривии · Мир Ведьмака",
       repoUrl: "https://github.com/guesti18921/geralt-fan-site",
@@ -171,7 +176,8 @@ facts: [
       ],
       formula: null,
       stack: ["PHP", "HTML", "CSS", "JavaScript"],
-      image: null,
+      image: geraltHome,
+      screenshots: [geraltHome, geraltAbout, geraltGallery, geraltWorld],
       liveUrl: "https://geralt-world.up.railway.app/",
       demoNote: "Geralt of Rivia · The Witcher world",
       repoUrl: "https://github.com/guesti18921/geralt-fan-site",
