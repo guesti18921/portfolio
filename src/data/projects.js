@@ -66,7 +66,10 @@ export const projectsData = {
       screenshots: [iqnixPreview, iqnixOverview],
       liveUrl: "https://iqnix.up.railway.app/",
       demoNote: null,
-      repoUrl: null,
+      repositories: [
+        { label: "Код frontend", url: "https://github.com/guesti18921/iqnix-ptm-frontend" },
+        { label: "Код backend", url: "https://github.com/guesti18921/iqnix-ptm-backend" },
+      ],
     },
     {
       id: "perceptron",
@@ -141,7 +144,10 @@ facts: [
       screenshots: [iqnixPreview, iqnixOverview],
       liveUrl: "https://iqnix.up.railway.app/",
       demoNote: null,
-      repoUrl: null,
+      repositories: [
+        { label: "Frontend source", url: "https://github.com/guesti18921/iqnix-ptm-frontend" },
+        { label: "Backend source", url: "https://github.com/guesti18921/iqnix-ptm-backend" },
+      ],
     },
     {
       id: "perceptron",

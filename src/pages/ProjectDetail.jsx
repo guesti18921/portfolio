@@ -20,6 +20,9 @@ export default function ProjectDetail() {
   const accentVar = `var(--accent-${project.accent})`;
   const shots = project.screenshots ?? [];
   const projectUrl = project.liveUrl;
+  const repositories = project.repositories ?? (
+    project.repoUrl ? [{ label: uiText[lang].repoLabel, url: project.repoUrl }] : []
+  );
 
   return (
     <main className="wrap project-detail">
@@ -72,11 +75,11 @@ export default function ProjectDetail() {
           <p className="project-detail__note">{project.demoNote}</p>
         )}
 
-        {project.repoUrl && (
-          <a className="project-row__link" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-            {uiText[lang].repoLabel}
+        {repositories.map((repository) => (
+          <a key={repository.url} className="project-row__link" href={repository.url} target="_blank" rel="noopener noreferrer">
+            {repository.label}
           </a>
-        )}
+        ))}
       </div>
     </main>
   );
