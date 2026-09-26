@@ -1,3 +1,5 @@
+import todoApp from "../assets/todo-app.png";
+import todoLogin from "../assets/todo-login.png";
 import geraltHome from "../assets/geralt-home.png";
 import geraltAbout from "../assets/geralt-about.png";
 import geraltGallery from "../assets/geralt-gallery.png";
@@ -71,6 +73,28 @@ export const projectsData = {
         { label: "Код backend", url: "https://github.com/guesti18921/iqnix-ptm-backend" },
       ],
     },
+
+    {
+  id: "todo-personal",
+  accent: "business",
+  tag: "Веб-приложение · Личный органайзер",
+  title: "TO-DO",
+  subtitle: "Задачи и заметки с синхронизацией",
+  description:
+    "Приложение для ведения задач, проектов и заметок. Поддерживает регистрацию, вход в аккаунт и синхронизацию данных между устройствами.",
+  facts: [
+    { label: "Данные", value: "личные задачи и заметки в аккаунте" },
+    { label: "Доступ", value: "с компьютера и телефона" },
+  ],
+  formula: null,
+  stack: ["JavaScript", "HTML", "CSS", "Supabase"],
+  image: todoApp,
+  screenshots: [todoApp, todoLogin],
+  liveUrl: "https://guesti18921.github.io/todo-personal/",
+  demoNote: null,
+  repoUrl: "https://github.com/guesti18921/todo-personal",
+},  
+
     {
       id: "perceptron",
       accent: "ai",
@@ -149,6 +173,28 @@ facts: [
         { label: "Backend source", url: "https://github.com/guesti18921/iqnix-ptm-backend" },
       ],
     },
+
+    {
+  id: "todo-personal",
+  accent: "business",
+  tag: "Web app · Personal organizer",
+  title: "TO-DO",
+  subtitle: "Tasks and notes across devices",
+  description:
+    "An app for managing tasks, projects, and notes. It supports account registration, sign-in, and syncing data across devices.",
+  facts: [
+    { label: "Data", value: "personal tasks and notes in an account" },
+    { label: "Access", value: "from desktop and phone" },
+  ],
+  formula: null,
+  stack: ["JavaScript", "HTML", "CSS", "Supabase"],
+  image: todoApp,
+  screenshots: [todoApp, todoLogin],
+  liveUrl: "https://guesti18921.github.io/todo-personal/",
+  demoNote: null,
+  repoUrl: "https://github.com/guesti18921/todo-personal",
+},
+
     {
       id: "perceptron",
       accent: "ai",
