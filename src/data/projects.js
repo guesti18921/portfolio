@@ -67,7 +67,7 @@ export const projectsData = {
       stack: ["PHP 8.2", "Laravel 12", "MySQL 8", "React 19", "MUI 9"],
       image: iqnixProject,
       screenshots: [iqnixProject, iqnixUsers, iqnixSettings],
-      liveUrl: "https://iqnix.up.railway.app/",
+      liveUrl: "https://iqnix.m1strell.com/",
       demoNote: null,
       repositories: [
         {
@@ -138,7 +138,7 @@ export const projectsData = {
       stack: ["PHP", "HTML", "CSS", "JavaScript"],
       image: geraltHome,
       screenshots: [geraltHome, geraltAbout, geraltGallery, geraltWorld],
-      liveUrl: "https://geralt-world.up.railway.app/",
+      liveUrl: "https://geralt.m1strell.com//",
       demoNote: "Геральт из Ривии · Мир Ведьмака",
       repoUrl: "https://github.com/guesti18921/geralt-fan-site",
     },
@@ -174,7 +174,7 @@ export const projectsData = {
       stack: ["PHP 8.2", "Laravel 12", "MySQL 8", "React 19", "MUI 9"],
       image: iqnixProject,
       screenshots: [iqnixProject, iqnixUsers, iqnixSettings],
-      liveUrl: "https://iqnix.up.railway.app/",
+      liveUrl: "https://iqnix.m1strell.com/",
       demoNote: null,
       repositories: [
         {
@@ -245,7 +245,7 @@ export const projectsData = {
       stack: ["PHP", "HTML", "CSS", "JavaScript"],
       image: geraltHome,
       screenshots: [geraltHome, geraltAbout, geraltGallery, geraltWorld],
-      liveUrl: "https://geralt-world.up.railway.app/",
+      liveUrl: "https://geralt.m1strell.com/",
       demoNote: "Geralt of Rivia · The Witcher world",
       repoUrl: "https://github.com/guesti18921/geralt-fan-site",
     },
