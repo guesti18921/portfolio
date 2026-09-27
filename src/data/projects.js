@@ -4,8 +4,9 @@ import geraltHome from "../assets/geralt-home.png";
 import geraltAbout from "../assets/geralt-about.png";
 import geraltGallery from "../assets/geralt-gallery.png";
 import geraltWorld from "../assets/geralt-world.png";
-import iqnixPreview from "../assets/iqnix-resources.png";
-import iqnixOverview from "../assets/iqnix-overview.png";
+import iqnixProject from "../assets/iqnix-project.png";
+import iqnixUsers from "../assets/iqnix-users.png";
+import iqnixSettings from "../assets/iqnix-settings.png";
 
 export const uiText = {
   ru: {
@@ -43,58 +44,62 @@ export const projectsData = {
       title: "IQNIX PTM",
       subtitle: "Project Total Manager",
       description:
-                 "Веб-приложение для планирования стоимости IT-проектов: работы сотрудников и подрядчиков, оборудования и услуг субподрядчиков. Рассчитывает себестоимость, наценку и итоговую стоимость с учётом заданного налога. Формирует документы НМА и коммерческие предложения в PDF, Excel и Word.",
+        "Веб-приложение для планирования стоимости IT-проектов: работы сотрудников и подрядчиков, оборудования и услуг субподрядчиков. Рассчитывает себестоимость, наценку и итоговую стоимость с учётом заданного налога. Формирует документы НМА и коммерческие предложения в PDF, Excel и Word.",
       facts: [
-  {
-    label: "Организация",
-    value: "проекты, объединённые в рабочие области",
-  },
-  {
-    label: "Роли",
-    value: "администратор, коммерческий директор, бухгалтер, кадровик",
-  },
-  {
-    label: "Расчёт",
-    value: "по количеству дней или по будням выбранного периода",
-  },
-  {
-    label: "Документы",
-    value: "НМА и коммерческие предложения: PDF, Excel, Word",
-  },
-],
+        {
+          label: "Организация",
+          value: "проекты, объединённые в рабочие области",
+        },
+        {
+          label: "Роли",
+          value: "администратор, коммерческий директор, бухгалтер, кадровик",
+        },
+        {
+          label: "Расчёт",
+          value: "по количеству дней или по будням выбранного периода",
+        },
+        {
+          label: "Документы",
+          value: "НМА и коммерческие предложения: PDF, Excel, Word",
+        },
+      ],
       formula: "total = cost + (cost × margin / 100)",
       stack: ["PHP 8.2", "Laravel 12", "MySQL 8", "React 19", "MUI 9"],
-      image: iqnixPreview,
-      screenshots: [iqnixPreview, iqnixOverview],
+      image: iqnixProject,
+      screenshots: [iqnixProject, iqnixUsers, iqnixSettings],
       liveUrl: "https://iqnix.up.railway.app/",
       demoNote: null,
       repositories: [
-        { label: "Код frontend", url: "https://github.com/guesti18921/iqnix-ptm-frontend" },
-        { label: "Код backend", url: "https://github.com/guesti18921/iqnix-ptm-backend" },
+        {
+          label: "Код frontend",
+          url: "https://github.com/guesti18921/iqnix-ptm-frontend",
+        },
+        {
+          label: "Код backend",
+          url: "https://github.com/guesti18921/iqnix-ptm-backend",
+        },
       ],
     },
-
     {
-  id: "todo-personal",
-  accent: "business",
-  tag: "Веб-приложение · Личный органайзер",
-  title: "TO-DO",
-  subtitle: "Задачи и заметки с синхронизацией",
-  description:
-    "Приложение для ведения задач, проектов и заметок. Поддерживает регистрацию, вход в аккаунт и синхронизацию данных между устройствами.",
-  facts: [
-    { label: "Данные", value: "личные задачи и заметки в аккаунте" },
-    { label: "Доступ", value: "с компьютера и телефона" },
-  ],
-  formula: null,
-  stack: ["JavaScript", "HTML", "CSS", "Supabase"],
-  image: todoApp,
-  screenshots: [todoApp, todoLogin],
-  liveUrl: "https://guesti18921.github.io/todo-personal/",
-  demoNote: null,
-  repoUrl: "https://github.com/guesti18921/todo-personal",
-},  
-
+      id: "todo-personal",
+      accent: "business",
+      tag: "Веб-приложение · Личный органайзер",
+      title: "TO-DO",
+      subtitle: "Задачи и заметки с синхронизацией",
+      description:
+        "Приложение для ведения задач, проектов и заметок. Поддерживает регистрацию, вход в аккаунт и синхронизацию данных между устройствами.",
+      facts: [
+        { label: "Данные", value: "личные задачи и заметки в аккаунте" },
+        { label: "Доступ", value: "с компьютера и телефона" },
+      ],
+      formula: null,
+      stack: ["JavaScript", "HTML", "CSS", "Supabase"],
+      image: todoApp,
+      screenshots: [todoApp, todoLogin],
+      liveUrl: "https://guesti18921.github.io/todo-personal/",
+      demoNote: null,
+      repoUrl: "https://github.com/guesti18921/todo-personal",
+    },
     {
       id: "perceptron",
       accent: "ai",
@@ -124,7 +129,10 @@ export const projectsData = {
         "Тематический сайт о Геральте из Ривии и мире «Ведьмака»: история персонажа, локации, бестиарий и пять ведьмачьих знаков. Галерея и карточки существ позволяют рассмотреть изображения подробнее.",
       facts: [
         { label: "Разделы", value: "Геральт, мир Ведьмака, бестиарий, знаки" },
-        { label: "Возможности", value: "галерея и просмотр изображений существ" },
+        {
+          label: "Возможности",
+          value: "галерея и просмотр изображений существ",
+        },
       ],
       formula: null,
       stack: ["PHP", "HTML", "CSS", "JavaScript"],
@@ -142,59 +150,63 @@ export const projectsData = {
       tag: "Internal system · Fullstack",
       title: "IQNIX PTM",
       subtitle: "Project Total Manager",
-     description:
-  "A web application for estimating IT project costs: employee and contractor work, equipment, and subcontracted services. Calculates costs, markup, and totals using a configurable tax rate. Exports intangible asset cost reports and commercial proposals as PDF, Excel, and Word documents.",
-facts: [
-  {
-    label: "Organization",
-    value: "projects grouped into workspaces",
-  },
-  {
-    label: "Roles",
-    value: "administrator, commercial director, accountant, HR",
-  },
-  {
-    label: "Calculation",
-    value: "by day count or weekdays within a date range",
-  },
-  {
-    label: "Documents",
-    value: "cost reports and proposals: PDF, Excel, Word",
-  },
-],
+      description:
+        "A web application for estimating IT project costs: employee and contractor work, equipment, and subcontracted services. Calculates costs, markup, and totals using a configurable tax rate. Exports intangible asset cost reports and commercial proposals as PDF, Excel, and Word documents.",
+      facts: [
+        {
+          label: "Organization",
+          value: "projects grouped into workspaces",
+        },
+        {
+          label: "Roles",
+          value: "administrator, commercial director, accountant, HR",
+        },
+        {
+          label: "Calculation",
+          value: "by day count or weekdays within a date range",
+        },
+        {
+          label: "Documents",
+          value: "cost reports and proposals: PDF, Excel, Word",
+        },
+      ],
       formula: "total = cost + (cost × margin / 100)",
       stack: ["PHP 8.2", "Laravel 12", "MySQL 8", "React 19", "MUI 9"],
-      image: iqnixPreview,
-      screenshots: [iqnixPreview, iqnixOverview],
+      image: iqnixProject,
+      screenshots: [iqnixProject, iqnixUsers, iqnixSettings],
       liveUrl: "https://iqnix.up.railway.app/",
       demoNote: null,
       repositories: [
-        { label: "Frontend source", url: "https://github.com/guesti18921/iqnix-ptm-frontend" },
-        { label: "Backend source", url: "https://github.com/guesti18921/iqnix-ptm-backend" },
+        {
+          label: "Frontend source",
+          url: "https://github.com/guesti18921/iqnix-ptm-frontend",
+        },
+        {
+          label: "Backend source",
+          url: "https://github.com/guesti18921/iqnix-ptm-backend",
+        },
       ],
     },
-
     {
-  id: "todo-personal",
-  accent: "business",
-  tag: "Web app · Personal organizer",
-  title: "TO-DO",
-  subtitle: "Tasks and notes across devices",
-  description:
-    "An app for managing tasks, projects, and notes. It supports account registration, sign-in, and syncing data across devices.",
-  facts: [
-    { label: "Data", value: "personal tasks and notes in an account" },
-    { label: "Access", value: "from desktop and phone" },
-  ],
-  formula: null,
-  stack: ["JavaScript", "HTML", "CSS", "Supabase"],
-  image: todoApp,
-  screenshots: [todoApp, todoLogin],
-  liveUrl: "https://guesti18921.github.io/todo-personal/",
-  demoNote: null,
-  repoUrl: "https://github.com/guesti18921/todo-personal",
-},
-
+      id: "todo-personal",
+      accent: "business",
+      tag: "Web app · Personal organizer",
+      title: "TO-DO",
+      subtitle: "Tasks and notes across devices",
+      description:
+        "An app for managing tasks, projects, and notes. It supports account registration, sign-in, and syncing data across devices.",
+      facts: [
+        { label: "Data", value: "personal tasks and notes in an account" },
+        { label: "Access", value: "from desktop and phone" },
+      ],
+      formula: null,
+      stack: ["JavaScript", "HTML", "CSS", "Supabase"],
+      image: todoApp,
+      screenshots: [todoApp, todoLogin],
+      liveUrl: "https://guesti18921.github.io/todo-personal/",
+      demoNote: null,
+      repoUrl: "https://github.com/guesti18921/todo-personal",
+    },
     {
       id: "perceptron",
       accent: "ai",
@@ -224,7 +236,10 @@ facts: [
         "A fan site about Geralt of Rivia and the world of The Witcher, featuring the character's story, locations, a bestiary, and the five witcher signs. Galleries and creature cards let visitors inspect images in detail.",
       facts: [
         { label: "Sections", value: "Geralt, the Witcher world, bestiary, signs" },
-        { label: "Features", value: "gallery and creature image viewer" },
+        {
+          label: "Features",
+          value: "gallery and creature image viewer",
+        },
       ],
       formula: null,
       stack: ["PHP", "HTML", "CSS", "JavaScript"],
