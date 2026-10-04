@@ -1,0 +1,153 @@
+/* Portfolio v2 — provisional inner-page background. */
+body.portfolio-v2{margin:0!important;min-width:0;background:#191d26!important;color:#fff!important;font-family:"Segoe UI",Arial,sans-serif!important}
+body.portfolio-v2 #root{max-width:none!important;width:100%!important;margin:0!important;padding:0!important;text-align:left}
+.portfolio-v2 *{box-sizing:border-box}
+.portfolio-v2 a{color:inherit;text-decoration:none;border-bottom:0}
+.portfolio-v2 a:focus-visible,.portfolio-v2 button:focus-visible,.portfolio-v2 summary:focus-visible{outline:2px solid #b8cfff;outline-offset:5px}
+.portfolio-v2 h1,.portfolio-v2 h2,.portfolio-v2 p,.portfolio-v2 ul{margin:0}
+.portfolio-v2 ul{padding:0;list-style:none}
+.portfolio-v2 button{font:inherit;cursor:pointer}
+.v2-landing{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:5rem 2rem 7rem;background:#191d26}
+.v2-stars{position:fixed;inset:0;z-index:0}.v2-stars canvas{display:block}
+.v2-landing-inner{z-index:1;position:relative;display:flex;flex-direction:column;align-items:center;width:min(46rem,100%);text-align:center;pointer-events:none}
+.v2-emblem{width:5.5rem;height:5.5rem;border:1px solid #fff;border-radius:50%;display:grid;place-items:center}
+.v2-emblem svg{width:2.5rem;height:2.5rem}
+.v2-identity,.v2-home-nav{position:relative;margin-top:3.5rem}
+.v2-identity:before,.v2-home-nav:before{content:"";position:absolute;top:calc(-3.5rem - 1px);left:calc(50% - .5px);height:calc(3.5rem + 1px);width:1px;background:#fff}
+.v2-identity{width:100%;border-top:1px solid #fff;border-bottom:1px solid #fff;padding:3rem 2rem;pointer-events:auto}
+.portfolio-v2 .v2-identity h1{color:#fff;font-size:2.25rem;font-weight:600;letter-spacing:.5rem;line-height:1.3;margin:0 0 1rem;text-transform:uppercase}
+.v2-identity p{font-size:.8rem;line-height:2;letter-spacing:.2rem;text-transform:uppercase;color:#fff}
+.v2-home-nav{display:flex;border:1px solid #fff;border-radius:4px;pointer-events:auto}
+.v2-home-nav a{min-width:8rem;padding:.95rem 1.5rem;text-transform:uppercase;letter-spacing:.2rem;font-size:.8rem;line-height:1;border-left:1px solid #fff}
+.v2-home-nav a:first-child{border-left:0}.v2-home-nav a:hover{background:#ffffff13}
+.v2-inner-page{min-height:100svh;display:flex;flex-direction:column;background:#191919}
+.v2-nav{width:min(1180px,calc(100% - 4rem));margin:0 auto;min-height:100px;display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.v2-brand{font-size:.95rem;font-weight:600;letter-spacing:.2rem}
+.v2-nav nav{display:flex;gap:2rem;font-size:.9rem}
+.v2-nav nav a{padding:.5rem 0;border-bottom:2px solid transparent}
+.v2-nav nav a.active{border-color:#ff5279}.v2-nav nav a:hover{color:#ff7896}
+.v2-container{width:min(1180px,calc(100% - 4rem));margin:0 auto}
+.portfolio-v2 .v2-page-title{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:650;letter-spacing:-.04em;line-height:1.1;color:#fff;margin:3rem 0 6rem}
+.v2-page-title:after{content:"";display:block;width:5rem;height:5px;background:#ff5279;margin-top:1.2rem}
+.v2-project-list{display:flex;flex-direction:column;gap:9rem}
+.v2-project{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:3.5rem;align-items:center}
+.v2-project--reverse{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)}
+.v2-project--reverse .v2-project-image{grid-column:2;grid-row:1}.v2-project--reverse .v2-project-copy{grid-column:1;grid-row:1}
+.v2-project-image{background:#5541b4;padding:2rem;display:flex;align-items:center;justify-content:center;min-height:360px;transition:background .2s}
+.v2-project-image:hover{background:#6550c9}
+.v2-project-image img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;box-shadow:0 12px 32px #0005}
+.portfolio-v2 .v2-project-copy h2{font-size:clamp(2rem,3vw,3rem);line-height:1.15;letter-spacing:-.03em;font-weight:650;color:#fff;margin:.7rem 0 1.3rem}
+.v2-project-tag{color:#c4bafa;font-size:.73rem;text-transform:uppercase;letter-spacing:.1rem}
+.v2-project-copy>p:not(.v2-project-tag){color:#c9c9cd;line-height:1.8;font-size:.98rem}
+.v2-stack{display:flex;gap:.5rem 1rem;flex-wrap:wrap;margin:1.5rem 0!important;color:#a7a7b0;font-size:.8rem}
+.v2-project-actions{display:flex;flex-wrap:wrap;gap:.8rem;align-items:flex-start}
+.v2-button{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;border:1px solid #ff5279!important;background:transparent;color:#fff!important;border-radius:0;padding:.8rem 1.15rem;font-size:.85rem;line-height:1.3;cursor:pointer;transition:background .2s}
+.v2-button:hover{background:#ff52792b}.v2-button--primary{background:#ff5279}.v2-button--primary:hover{background:#e04468}
+.v2-repositories{position:relative}.v2-repositories summary{list-style:none}.v2-repositories summary::-webkit-details-marker{display:none}
+.v2-repositories>div{position:absolute;z-index:5;top:calc(100% + .5rem);left:0;min-width:180px;background:#242424;border:1px solid #666;padding:.4rem;box-shadow:0 10px 25px #0005}
+.v2-repositories>div a{display:block;padding:.65rem;font-size:.85rem}.v2-repositories>div a:hover{background:#ffffff12}
+.v2-about{flex:1;min-height:60svh}.portfolio-v2 .v2-about h2{color:#ddd;font-size:1.2rem;font-weight:400;margin-bottom:2rem}
+.v2-technologies{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;max-width:850px}
+.v2-technologies li{padding:2rem 1rem;border:1px solid #ffffff22;text-align:center;font-size:1rem;color:#ddd}
+.v2-footer{position:relative;margin-top:7rem;padding:4rem 2rem 2.5rem;background:#141414}
+.v2-socials{display:flex;justify-content:center;gap:1.8rem}.v2-socials a{display:block;width:27px;height:27px;color:#fff}.v2-socials svg{width:100%;height:100%}.v2-socials a:hover{color:#ff7896}
+.v2-top{position:absolute;top:-1.3rem;left:calc(50% - 1.3rem);width:2.6rem;height:2.6rem;border:0;background:#ff5279;color:#fff;padding:.6rem}.v2-top svg{width:100%;height:100%}
+.v2-footer--home{position:absolute;bottom:2rem;left:0;right:0;z-index:1;margin:0;background:none;padding:0;pointer-events:none}.v2-footer--home a{pointer-events:auto}
+@media(max-width:900px){.v2-project,.v2-project--reverse{grid-template-columns:1fr;gap:2rem}.v2-project--reverse .v2-project-image,.v2-project--reverse .v2-project-copy{grid-column:auto;grid-row:auto}.v2-project-image{min-height:0;padding:2rem}.v2-project-list{gap:6rem}}
+@media(max-width:600px){.v2-nav,.v2-container{width:calc(100% - 2rem)}.v2-nav{min-height:85px;gap:1rem;flex-wrap:wrap;padding:1rem 0}.v2-nav nav{gap:1.2rem;font-size:.8rem}.v2-brand{font-size:.8rem}.portfolio-v2 .v2-page-title{margin:2rem 0 3rem}.v2-project-image{padding:1rem}.v2-landing{padding:3rem 1rem 6rem}.v2-emblem{width:4.75rem;height:4.75rem}.v2-identity,.v2-home-nav{margin-top:2rem}.v2-identity:before,.v2-home-nav:before{top:calc(-2rem - 1px);height:calc(2rem + 1px)}.v2-identity{padding:2.5rem .5rem}.portfolio-v2 .v2-identity h1{font-size:1.7rem;letter-spacing:.3rem}.v2-identity p{font-size:.65rem;letter-spacing:.13rem}.v2-home-nav a{min-width:7rem;padding:1rem}.v2-footer{margin-top:5rem}.v2-footer--home{margin:0}.v2-technologies{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.portfolio-v2 *{scroll-behavior:auto!important;transition:none!important}}
+
+/* About: portrait outline and offset technology columns. */
+.v2-about-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:6rem;padding:0 0 2rem}
+.v2-about-intro{max-width:440px;margin:0 auto;width:100%}
+.v2-person{display:block;width:190px;height:210px;margin:0 auto 2.1rem}
+.v2-about-text{color:#e3e3e6;font-size:1rem;font-weight:400;line-height:1.8}
+.v2-about-text p+p{margin-top:1rem}
+.v2-tech-area{width:100%;max-width:470px;margin:0 auto}
+.v2-tech-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}
+.v2-tech-column{display:flex;flex-direction:column;gap:1.5rem}
+.v2-tech-column:nth-child(1),.v2-tech-column:nth-child(3){padding-top:3.2rem!important}
+.v2-tech-card{min-width:0;height:94px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;border:2px solid transparent;border-radius:7px;background:linear-gradient(#191919,#191919) padding-box,linear-gradient(125deg,#4bace5,#a87ca6 55%,#ff5279) border-box}
+.v2-tech-card img{width:52px;height:52px;object-fit:contain;display:block}
+.v2-tech-card span{font-size:.67rem;line-height:1.3;font-weight:650;letter-spacing:.02rem;text-transform:uppercase;color:#eee}
+.v2-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:1000px){.v2-about-layout{gap:3rem}.v2-tech-columns{gap:.8rem}}
+@media(max-width:760px){.v2-about-layout{grid-template-columns:1fr;gap:3rem}.v2-about-intro{max-width:470px}.v2-tech-area{max-width:470px}.v2-person{width:160px;height:180px}.v2-about-text{font-size:.95rem}}
+@media(max-width:380px){.v2-tech-columns{gap:.65rem}.v2-tech-card{height:84px}.v2-tech-card img{width:44px;height:44px}.v2-tech-card span{font-size:.6rem}}
+
+/* Large project rows and rising underline links. */
+.portfolio-v2 h1,.portfolio-v2 h2,.portfolio-v2 h3{font-family:"Segoe UI",Arial,sans-serif!important}
+.v2-projects.v2-container{width:min(1480px,calc(100% - 6rem))}
+.portfolio-v2 .v2-projects .v2-page-title{text-align:center;width:fit-content;position:relative;margin:3rem auto 8rem;font-size:clamp(3rem,5vw,4.25rem);letter-spacing:-.035em;isolation:isolate}
+.v2-projects .v2-page-title:after{position:absolute;width:95%;height:.25em;left:15%;bottom:.03em;margin:0;z-index:-1;background:#ff465f}
+.v2-project-list{gap:10rem}
+.v2-project{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:4rem;align-items:center}
+.v2-project--reverse{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
+.v2-project-image,.v2-project-image:hover{background:transparent;padding:0;min-height:0;border:0;border-radius:0;box-shadow:none;transition:none}
+.v2-project-image img{width:100%;height:auto;max-height:none;object-fit:contain;border:0;border-radius:0;box-shadow:0 18px 45px #0003;transition:transform .3s ease}
+.v2-project-image:hover img{transform:translateY(-4px)}
+.portfolio-v2 .v2-project-copy h2{font-size:clamp(1.8rem,2.3vw,2.6rem);font-weight:700;line-height:1.2;margin:0 0 1.7rem;letter-spacing:-.035em}
+.v2-project-subtitle{display:block}
+.v2-project-tag,.v2-stack{display:none!important}
+.v2-project-copy>p:not(.v2-project-tag){font-size:1.05rem;font-weight:400;line-height:1.8;color:#ededf0}
+.v2-project-actions{flex-direction:column;align-items:flex-start;gap:1.45rem;margin-top:1.5rem}
+.portfolio-v2 .v2-project-link{display:inline-flex;align-items:center;position:relative;isolation:isolate;overflow:hidden;padding:.6rem .7rem;border:0!important;border-radius:0;background:transparent;color:#fff!important;font-family:"Segoe UI",Arial,sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.16rem;text-transform:uppercase;line-height:1.3;cursor:pointer;transition:color .25s ease}
+.v2-project-link:before{content:"";position:absolute;z-index:-1;inset:auto 0 0;height:2px;background:#ff465f;transition:height .25s ease}
+.portfolio-v2 .v2-project-link:hover,.portfolio-v2 .v2-project-link:focus-visible,.v2-repositories[open]>.v2-project-link{color:#191919!important}
+.v2-project-link:hover:before,.v2-project-link:focus-visible:before,.v2-repositories[open]>.v2-project-link:before{height:100%}
+.v2-project-link span{position:relative}
+.v2-repositories>div{min-width:190px}
+@media(max-width:1100px){.v2-projects.v2-container{width:calc(100% - 4rem)}.v2-project,.v2-project--reverse{gap:2.5rem}}
+@media(max-width:900px){.v2-project,.v2-project--reverse{grid-template-columns:1fr;gap:2.2rem}.v2-project-list{gap:6rem}.portfolio-v2 .v2-projects .v2-page-title{margin:2.5rem auto 5rem}.v2-project-copy{max-width:650px}.portfolio-v2 .v2-project-copy h2{font-size:2rem}.v2-project--reverse .v2-project-image,.v2-project--reverse .v2-project-copy{grid-column:auto;grid-row:auto}}
+@media(max-width:600px){.v2-projects.v2-container{width:calc(100% - 2rem)}.v2-project-copy>p:not(.v2-project-tag){font-size:.95rem}.portfolio-v2 .v2-project-copy h2{font-size:1.7rem}.v2-project-list{gap:4.5rem}}
+@media(prefers-reduced-motion:reduce){.v2-project-image:hover img{transform:none}}
+
+/* About trial: sparse stars and a continuous background. */
+.v2-inner-page.v2-starry{position:relative;isolation:isolate;background:#191d26}
+.v2-starry .v2-footer{background:transparent}
+.v2-starry .v2-tech-card{background:linear-gradient(#191d26,#191d26) padding-box,linear-gradient(125deg,#4bace5,#a87ca6 55%,#ff5279) border-box}
+.v2-starry .v2-nav nav a{position:relative;border-color:transparent}
+.v2-starry .v2-nav nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:linear-gradient(90deg,#4bace5,#ff5279)}
+.v2-starry .v2-page-title{width:fit-content;margin-left:auto;margin-right:auto;text-align:center}
+.v2-starry .v2-page-title:after{width:100%;height:3px;background:linear-gradient(90deg,#4bace5,#a87ca6,#ff5279)}
+.v2-starry .v2-top{background:linear-gradient(135deg,#4bace5,#a87ca6,#ff5279)}
+
+
+/* Each star has its own drift, brightness cycle and starting phase. */
+.v2-quiet-stars{position:fixed;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.v2-quiet-stars span{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);border-radius:50%;background:var(--star-color);box-shadow:0 0 4px var(--star-color);opacity:.5;animation:v2-star-blink var(--blink) ease-in-out var(--phase) infinite,v2-star-drift var(--drift) ease-in-out var(--phase) infinite alternate}
+@keyframes v2-star-blink{0%,100%{opacity:.15}45%{opacity:.85}65%{opacity:.4}}
+@keyframes v2-star-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--dx),var(--dy),0)}}
+@media(prefers-reduced-motion:reduce){.v2-quiet-stars span{animation:none;opacity:.55}}
+
+/* Чёрное небо на About */
+.v2-inner-page.v2-starry {
+  background: #000;
+}
+
+/* Карточки сливаются с фоном, градиентные рамки остаются */
+.v2-starry .v2-tech-card {
+  background:
+    linear-gradient(#000, #000) padding-box,
+    linear-gradient(125deg, #4bace5, #a87ca6 55%, #ff5279) border-box;
+}
+
+/* Немного ярче звёзды */
+.v2-quiet-stars span {
+  box-shadow: 0 0 5px var(--star-color);
+}
+
+@keyframes v2-star-blink {
+  0%, 100% { opacity: 0.3; }
+  45% { opacity: 1; }
+  65% { opacity: 0.55; }
+}
+
+/* Чёрный фон главной страницы */
+body.portfolio-v2 {
+  background: #000 !important;
+}
+
+.v2-landing {
+  background: #000;
+}
