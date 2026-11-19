@@ -86,15 +86,31 @@ body.portfolio-v2 #root{max-width:none!important;width:100%!important;margin:0!i
 .v2-project-image,.v2-project-image:hover{background:transparent;padding:0;min-height:0;border:0;border-radius:0;box-shadow:none;transition:none}
 .v2-project-image img{width:100%;height:auto;max-height:none;object-fit:contain;border:0;border-radius:0;box-shadow:0 18px 45px #0003;transition:transform .3s ease}
 .v2-project-image:hover img{transform:translateY(-4px)}
+.v2-project-image.v2-project-image--screens,
+.v2-project-image.v2-project-image--portrait {
+  width: 100%;
+  padding: clamp(8px, 1.15vw, 16px);
+  justify-self: center;
+  background: radial-gradient(ellipse at top, #221e2d, #111218 75%);
+  border: 1px solid #d3c7ec25;
+  border-radius: 18px;
+}
 .v2-project-image--screens {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(.5rem, 2vw, 1.25rem);
-  width: 100%;
-  max-width: 500px;
-  justify-self: center;
+  gap: clamp(8px, 1.25vw, 18px);
+  max-width: 596px;
 }
-.v2-project-image--screens img { border-radius: 12px; }
+.v2-project-image--screens img {
+  aspect-ratio: 798 / 1300;
+  background: linear-gradient(#faf5ed 0 95%, #fdf9f1 95%);
+  border-radius: 10px;
+}
+.v2-project-image--portrait { max-width: 454px; }
+.v2-project-image--portrait img {
+  aspect-ratio: 1101 / 1229;
+  border-radius: 10px;
+}
 .portfolio-v2 .v2-project-copy h2{font-size:clamp(1.8rem,2.3vw,2.6rem);font-weight:700;line-height:1.2;margin:0 0 1.7rem;letter-spacing:-.035em}
 .v2-project-subtitle{display:block}
 .v2-project-tag,.v2-stack{display:none!important}

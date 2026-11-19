@@ -1,7 +1,7 @@
 import todoApp from "../assets/todo-app.png";
 import todoLogin from "../assets/todo-login.png";
-import tallynOverview from "../assets/tallyn-overview.jpg";
-import tallynAccounts from "../assets/tallyn-accounts.jpg";
+import tallynOverview from "../assets/tallyn-overview.png";
+import tallynAnalysis from "../assets/tallyn-analysis.png";
 import geraltHome from "../assets/geralt-home.png";
 import geraltAbout from "../assets/geralt-about.png";
 import geraltGallery from "../assets/geralt-gallery.png";
@@ -243,8 +243,8 @@ export const projectsData = {
       ],
       liveLabel: "Open web app",
       previews: [
-        { src: tallynOverview, alt: "Tallyn balances and monthly overview" },
-        { src: tallynAccounts, alt: "Tallyn account list" },
+        { src: tallynOverview, alt: "Tallyn overview with an N26 card", width: 758, height: 1301 },
+        { src: tallynAnalysis, alt: "Tallyn monthly spending breakdown", width: 798, height: 1299 },
       ],
     },
     {
