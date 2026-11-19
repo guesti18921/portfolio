@@ -227,7 +227,7 @@ function PageLayout({ children, starry = false }) {
   </div>;
 }
 
-const selectedProjects = projectsData.en.filter(project => ["iqnix-ptm", "todo-personal", "geralt-world"].includes(project.id));
+const selectedProjects = projectsData.en.filter(project => ["iqnix-ptm", "todo-personal", "tallyn", "geralt-world"].includes(project.id));
 
 function About() {
   const columns = [
@@ -265,9 +265,31 @@ function RepositoryLink({ project }) {
 function Projects() {
   return <PageLayout starry><main className="v2-projects v2-container"><h1 className="v2-page-title">Projects</h1>
     <div className="v2-project-list">{selectedProjects.map((project, index) => <article className={`v2-project ${index % 2 ? "v2-project--reverse" : ""}`} key={project.id}>
-      <a className="v2-project-image" href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live app`}><img src={project.id === "iqnix-ptm" ? iqnixLogin : project.image} alt={`${project.title} application preview`} loading="lazy" /></a>
+      <a
+        className={`v2-project-image${project.previews ? " v2-project-image--screens" : ""}`}
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${project.title} live app`}
+      >
+        {project.previews ? project.previews.map(({ src, alt }) => (
+          <img key={src} src={src} alt={alt} width="360" height="740" loading="lazy" />
+        )) : (
+          <img src={project.id === "iqnix-ptm" ? iqnixLogin : project.image} alt={`${project.title} application preview`} loading="lazy" />
+        )}
+      </a>
       <div className="v2-project-copy"><p className="v2-project-tag">{project.tag}</p><h2>{project.title}<span className="v2-project-subtitle">{project.subtitle}</span></h2><p>{project.description}</p><ul className="v2-stack">{project.stack.map(tech => <li key={tech}>{tech}</li>)}</ul>
-        <div className="v2-project-actions"><a className="v2-project-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer"><span>Live app</span></a><RepositoryLink project={project} /></div>
+        <div className="v2-project-actions">
+          <a className="v2-project-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            <span>{project.liveLabel ?? "Live app"}</span>
+          </a>
+          {project.downloadUrl && (
+            <a className="v2-project-link" href={project.downloadUrl}>
+              <span>Download Android APK</span>
+            </a>
+          )}
+          <RepositoryLink project={project} />
+        </div>
       </div>
     </article>)}</div>
   </main></PageLayout>;

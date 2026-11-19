@@ -1,5 +1,7 @@
 import todoApp from "../assets/todo-app.png";
 import todoLogin from "../assets/todo-login.png";
+import tallynOverview from "../assets/tallyn-overview.jpg";
+import tallynAccounts from "../assets/tallyn-accounts.jpg";
 import geraltHome from "../assets/geralt-home.png";
 import geraltAbout from "../assets/geralt-about.png";
 import geraltGallery from "../assets/geralt-gallery.png";
@@ -7,6 +9,16 @@ import geraltWorld from "../assets/geralt-world.png";
 import iqnixProject from "../assets/iqnix-project.png";
 import iqnixUsers from "../assets/iqnix-users.png";
 import iqnixSettings from "../assets/iqnix-settings.png";
+
+const tallyn = {
+  id: "tallyn",
+  accent: "business",
+  title: "Tallyn",
+  stack: ["React", "TypeScript", "Capacitor", "Supabase"],
+  image: tallynOverview,
+  liveUrl: "https://tallyn.m1strell.com/",
+  downloadUrl: "https://tallyn.m1strell.com/download/Tallyn-android.apk",
+};
 
 export const uiText = {
   ru: {
@@ -99,6 +111,18 @@ export const projectsData = {
       liveUrl: "https://todo.m1strell.com/",
       demoNote: null,
       repoUrl: "https://github.com/guesti18921/todo-personal",
+    },
+    {
+      ...tallyn,
+      tag: "Веб-приложение и Android · Личные финансы",
+      subtitle: "Учёт доходов и расходов",
+      description:
+        "Tallyn помогает вести личный бюджет. В приложении можно записывать доходы и расходы, следить за остатками на счетах в разных валютах и планировать регулярные платежи.",
+      facts: [
+        { label: "Валюты", value: "рубль, доллар США и евро" },
+        { label: "Данные", value: "синхронизация между устройствами и зашифрованные резервные копии" },
+      ],
+      liveLabel: "Открыть веб-версию",
     },
     {
       id: "perceptron",
@@ -206,6 +230,22 @@ export const projectsData = {
       liveUrl: "https://todo.m1strell.com/",
       demoNote: null,
       repoUrl: "https://github.com/guesti18921/todo-personal",
+    },
+    {
+      ...tallyn,
+      tag: "Web and Android app · Personal finance",
+      subtitle: "Income and expense tracking",
+      description:
+        "Tallyn helps you manage a personal budget. Record income and expenses, track account balances in different currencies, and plan recurring payments.",
+      facts: [
+        { label: "Currencies", value: "Russian ruble, US dollar, and euro" },
+        { label: "Data", value: "cross-device sync and encrypted backups" },
+      ],
+      liveLabel: "Open web app",
+      previews: [
+        { src: tallynOverview, alt: "Tallyn balances and monthly overview" },
+        { src: tallynAccounts, alt: "Tallyn account list" },
+      ],
     },
     {
       id: "perceptron",
