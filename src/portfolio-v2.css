@@ -90,7 +90,6 @@ body.portfolio-v2 #root{max-width:none!important;width:100%!important;margin:0!i
 .v2-project-image.v2-project-image--portrait {
   width: 100%;
   padding: clamp(8px, 1.15vw, 16px);
-  justify-self: center;
   background: radial-gradient(ellipse at top, #221e2d, #111218 75%);
   border: 1px solid #d3c7ec25;
   border-radius: 18px;
@@ -100,13 +99,17 @@ body.portfolio-v2 #root{max-width:none!important;width:100%!important;margin:0!i
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(8px, 1.25vw, 18px);
   max-width: 596px;
+  justify-self: start;
 }
 .v2-project-image--screens img {
   aspect-ratio: 798 / 1300;
   background: linear-gradient(#faf5ed 0 95%, #fdf9f1 95%);
   border-radius: 10px;
 }
-.v2-project-image--portrait { max-width: 454px; }
+.v2-project-image--portrait {
+  max-width: 454px;
+  justify-self: center;
+}
 .v2-project-image--portrait img {
   aspect-ratio: 1101 / 1229;
   border-radius: 10px;
