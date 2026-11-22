@@ -257,41 +257,54 @@ function About() {
 }
 
 function RepositoryLink({ project }) {
-  if (project.repositories?.length > 1) return <details className="v2-repositories"><summary className="v2-project-link"><span>Learn more</span></summary><div>{project.repositories.map(repo => <a key={repo.url} href={repo.url} target="_blank" rel="noopener noreferrer">{repo.label}</a>)}</div></details>;
+  const label = project.liveUrl ? "Learn more" : "Source code";
+  if (project.repositories?.length > 1) return <details className="v2-repositories"><summary className="v2-project-link"><span>{label}</span></summary><div>{project.repositories.map(repo => <a key={repo.url} href={repo.url} target="_blank" rel="noopener noreferrer">{repo.label}</a>)}</div></details>;
   const url = project.repoUrl || project.repositories?.[0]?.url;
-  return url ? <a className="v2-project-link" href={url} target="_blank" rel="noopener noreferrer"><span>Learn more</span></a> : null;
+  return url ? <a className="v2-project-link" href={url} target="_blank" rel="noopener noreferrer"><span>{label}</span></a> : null;
 }
 
 function Projects() {
   return <PageLayout starry><main className="v2-projects v2-container"><h1 className="v2-page-title">Projects</h1>
-    <div className="v2-project-list">{selectedProjects.map((project, index) => <article className={`v2-project ${index % 2 ? "v2-project--reverse" : ""}`} key={project.id}>
-      <a
-        className={`v2-project-image${project.previews ? " v2-project-image--screens" : ""}${project.id === "todo-personal" ? " v2-project-image--portrait" : ""}`}
-        href={project.liveUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Open ${project.title} live app`}
-      >
-        {project.previews ? project.previews.map(({ src, alt, width, height }) => (
-          <img key={src} src={src} alt={alt} width={width} height={height} loading="lazy" />
-        )) : (
-          <img src={project.id === "iqnix-ptm" ? iqnixLogin : project.image} alt={`${project.title} application preview`} loading="lazy" />
-        )}
-      </a>
-      <div className="v2-project-copy"><p className="v2-project-tag">{project.tag}</p><h2>{project.title}<span className="v2-project-subtitle">{project.subtitle}</span></h2><p>{project.description}</p><ul className="v2-stack">{project.stack.map(tech => <li key={tech}>{tech}</li>)}</ul>
-        <div className="v2-project-actions">
-          <a className="v2-project-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-            <span>{project.liveLabel ?? "Live app"}</span>
-          </a>
-          {project.downloadUrl && (
-            <a className="v2-project-link" href={project.downloadUrl}>
-              <span>Download Android APK</span>
-            </a>
+    <div className="v2-project-list">{selectedProjects.map((project, index) => {
+      const { liveUrl } = project;
+      const Preview = liveUrl ? "a" : "div";
+      const previewLinkProps = liveUrl ? {
+        href: liveUrl,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        "aria-label": `Open ${project.title} live app`,
+      } : undefined;
+
+      return <article className={`v2-project ${index % 2 ? "v2-project--reverse" : ""}`} key={project.id}>
+        <Preview
+          className={`v2-project-image${project.previews ? " v2-project-image--screens" : ""}${project.id === "todo-personal" ? " v2-project-image--portrait" : ""}`}
+          {...previewLinkProps}
+        >
+          {project.previews ? project.previews.map(({ src, alt, width, height }) => (
+            <img key={src} src={src} alt={alt} width={width} height={height} loading="lazy" />
+          )) : (
+            <img src={project.id === "iqnix-ptm" ? iqnixLogin : project.image} alt={`${project.title} application preview`} loading="lazy" />
           )}
-          <RepositoryLink project={project} />
+        </Preview>
+        <div className="v2-project-copy"><p className="v2-project-tag">{project.tag}</p><h2>{project.title}<span className="v2-project-subtitle">{project.subtitle}</span></h2><p>{project.description}</p><ul className="v2-stack">{project.stack.map(tech => <li key={tech}>{tech}</li>)}</ul>
+          <div className="v2-project-actions">
+            {liveUrl ? (
+              <a className="v2-project-link" href={liveUrl} target="_blank" rel="noopener noreferrer">
+                <span>{project.liveLabel ?? "Live app"}</span>
+              </a>
+            ) : (
+              <p className="v2-project-demo-status">{project.demoNote}</p>
+            )}
+            {project.downloadUrl && (
+              <a className="v2-project-link" href={project.downloadUrl}>
+                <span>Download Android APK</span>
+              </a>
+            )}
+            <RepositoryLink project={project} />
+          </div>
         </div>
-      </div>
-    </article>)}</div>
+      </article>;
+    })}</div>
   </main></PageLayout>;
 }
 
