@@ -1,14 +1,12 @@
 import { contactInfo, uiText } from "../data/projects";
-import { useLanguage } from "../context/languageContext";
 import { useReveal } from "../hooks/useReveal";
 
 export default function Contact() {
-  const { lang } = useLanguage();
   const [ref, isVisible] = useReveal();
 
   return (
     <section ref={ref} className={`wrap contact reveal ${isVisible ? "is-visible" : ""}`} id="contact">
-      <h2 className="section-title">{uiText[lang].contactTitle}</h2>
+      <h2 className="section-title">{uiText.contactTitle}</h2>
       <hr className="rule" />
       <div className="contact__row">
         <a className="contact__link" href={`mailto:${contactInfo.email}`}>

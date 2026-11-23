@@ -1,18 +1,16 @@
 import { useParams, Link } from "react-router-dom";
 import { projectsData, uiText } from "../data/projects";
-import { useLanguage } from "../context/languageContext";
 import ProjectGallery from "../components/ProjectGallery";
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const { lang } = useLanguage();
-  const project = projectsData[lang].find((p) => p.id === id);
+  const project = projectsData.find((p) => p.id === id);
 
   if (!project) {
     return (
       <main className="wrap project-detail">
-        <p>{uiText[lang].notFoundLabel}</p>
-        <Link to="/">← {uiText[lang].backLabel}</Link>
+        <p>{uiText.notFoundLabel}</p>
+        <Link to="/">← {uiText.backLabel}</Link>
       </main>
     );
   }
@@ -21,13 +19,13 @@ export default function ProjectDetail() {
   const shots = project.screenshots ?? [];
   const projectUrl = project.liveUrl;
   const repositories = project.repositories ?? (
-    project.repoUrl ? [{ label: uiText[lang].repoLabel, url: project.repoUrl }] : []
+    project.repoUrl ? [{ label: uiText.repoLabel, url: project.repoUrl }] : []
   );
 
   return (
     <main className="wrap project-detail">
       <Link to="/" className="project-detail__back">
-        ← {uiText[lang].backLabel}
+        ← {uiText.backLabel}
       </Link>
 
       <p className="mono-tag" style={{ color: accentVar }}>{project.tag}</p>
@@ -57,7 +55,6 @@ export default function ProjectDetail() {
       <ProjectGallery
         shots={shots}
         projectTitle={project.title}
-        lang={lang}
         accent={accentVar}
       />
 
@@ -69,7 +66,7 @@ export default function ProjectDetail() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {lang === "ru" ? "Открыть проект ↗" : "Open project ↗"}
+            Open project ↗
           </a>
         ) : (
           <p className="project-detail__note">{project.demoNote}</p>

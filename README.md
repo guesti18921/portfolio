@@ -1,10 +1,10 @@
 # Portfolio — Artem Krasnoslobodtsev
 
-Personal bilingual portfolio built with React and Vite.
+Personal developer portfolio built with React and Vite.
 
 ## Features
 
-- Russian and English content
+- English interface
 - Light and dark themes
 - Responsive project list
 - Dedicated project pages with screenshots

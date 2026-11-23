@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/gallery.css";
 
-export default function ProjectGallery({ shots, projectTitle, lang, accent }) {
-  const ru = lang === "ru";
+export default function ProjectGallery({ shots, projectTitle, accent }) {
   const [index, setIndex] = useState(0);
   const dialog = useRef(null);
   const [activeShot, setActiveShot] = useState(null);
@@ -27,7 +26,7 @@ export default function ProjectGallery({ shots, projectTitle, lang, accent }) {
   return (
     <section className="project-gallery" aria-labelledby="project-gallery-title">
       <div className="project-gallery__heading">
-        <h2 id="project-gallery-title">{ru ? "Интерфейс проекта" : "Project interface"}</h2>
+        <h2 id="project-gallery-title">Project interface</h2>
       </div>
       <figure className="project-detail__shot carousel" style={{ "--accent": accent }}>
         <div className="carousel__stage">
@@ -35,41 +34,41 @@ export default function ProjectGallery({ shots, projectTitle, lang, accent }) {
           {shots.length > 1 && (
             <>
               <button type="button" className="carousel__arrow carousel__arrow--prev"
-                aria-label={ru ? "Предыдущее изображение" : "Previous image"}
+                aria-label="Previous image"
                 onClick={() => change(-1)}>‹</button>
               <button type="button" className="carousel__arrow carousel__arrow--next"
-                aria-label={ru ? "Следующее изображение" : "Next image"}
+                aria-label="Next image"
                 onClick={() => change(1)}>›</button>
             </>
           )}
         </div>
         <figcaption className="project-gallery__caption">
-          <div className="carousel__dots" aria-label={ru ? "Выбор изображения" : "Choose image"}>
+          <div className="carousel__dots" aria-label="Choose image">
             {shots.map((src, i) => (
               <button type="button" key={`${src}-${i}`}
-                aria-label={`${ru ? "Изображение" : "Image"} ${i + 1}`}
+                aria-label={`Image ${i + 1}`}
                 aria-pressed={i === current}
                 onClick={() => setIndex(i)}><span /></button>
             ))}
           </div>
           <button type="button" className="project-gallery__original" onClick={() => setActiveShot(shot)}>
-          {ru ? "Открыть" : "Open"}
+            Open
           </button>
         </figcaption>
       </figure>
       <dialog
         ref={dialog}
         className="original-viewer"
-        aria-label={ru ? "Оригинал скриншота" : "Original screenshot"}
+        aria-label="Original screenshot"
         onCancel={(event) => {
           event.preventDefault();
           setActiveShot(null);
         }}
       >
         <div className="original-viewer__toolbar">
-          <span>{ru ? "Оригинальный размер · прокрутите для просмотра деталей" : "Original size · scroll to inspect details"}</span>
+          <span>Original size · scroll to inspect details</span>
           <button type="button" onClick={() => setActiveShot(null)}>
-            {ru ? "Закрыть · Esc" : "Close · Esc"}
+            Close · Esc
           </button>
         </div>
         <div className="original-viewer__stage" tabIndex={0}>

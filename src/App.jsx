@@ -190,7 +190,7 @@ function Landing() {
     <Stars />
     <div className="v2-landing-inner">
       <div className="v2-emblem" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"><path d="M6 16 14 6h20l8 10-18 26Z"/><path d="M6 16h36M14 6l5 10 5 26 5-26 5-10M19 16l5-10 5 10"/></svg></div>
-      <div className="v2-identity"><h1>M1STRELL</h1><p>{profileData.en.name}<br />Portfolio</p></div>
+      <div className="v2-identity"><h1>M1STRELL</h1><p>{profileData.name}<br />Portfolio</p></div>
       <nav className="v2-home-nav" aria-label="Main navigation"><Link to="/about">About</Link><Link to="/projects">Projects</Link></nav>
     </div>
     <Footer home />
@@ -227,7 +227,7 @@ function PageLayout({ children, starry = false }) {
   </div>;
 }
 
-const selectedProjects = projectsData.en.filter(project => ["iqnix-ptm", "todo-personal", "tallyn", "geralt-world"].includes(project.id));
+const selectedProjects = projectsData.filter(project => ["iqnix-ptm", "todo-personal", "tallyn", "geralt-world"].includes(project.id));
 
 function About() {
   const columns = [
@@ -316,7 +316,6 @@ export default function App() {
   const { pathname } = useLocation();
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "dark");
-    document.documentElement.lang = "en";
     document.body.classList.add("portfolio-v2");
     return () => document.body.classList.remove("portfolio-v2");
   }, []);

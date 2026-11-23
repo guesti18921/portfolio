@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { uiText } from "../data/projects";
 
-export default function ProjectRow({ project, index, lang }) {
+export default function ProjectRow({ project, index }) {
   const reversed = index % 2 === 1;
   const accentVar = `var(--accent-${project.accent})`;
 
@@ -41,7 +41,7 @@ export default function ProjectRow({ project, index, lang }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {uiText[lang].detailsLabel}
+            {uiText.detailsLabel}
           </Link>
         </div>
       </div>
