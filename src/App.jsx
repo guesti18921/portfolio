@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { projectsData, profileData, contactInfo } from "./data/projects";
+import ProjectPreviewImage from "./components/ProjectPreviewImage";
 import "./portfolio-v2.css";
-import iqnixLogin from "./assets/iqnix-login.png";
 
 const PARTICLES_CONFIG = {
   "particles": {
@@ -266,7 +266,7 @@ function RepositoryLink({ project }) {
 function Projects() {
   return <PageLayout starry><main className="v2-projects v2-container"><h1 className="v2-page-title">Projects</h1>
     <div className="v2-project-list">{selectedProjects.map((project, index) => {
-      const { liveUrl } = project;
+      const { liveUrl, previews } = project;
       const Preview = liveUrl ? "a" : "div";
       const previewLinkProps = liveUrl ? {
         href: liveUrl,
@@ -277,14 +277,12 @@ function Projects() {
 
       return <article className={`v2-project ${index % 2 ? "v2-project--reverse" : ""}`} key={project.id}>
         <Preview
-          className={`v2-project-image${project.previews ? " v2-project-image--screens" : ""}${project.id === "todo-personal" ? " v2-project-image--portrait" : ""}`}
+          className={`v2-project-image${previews.length > 1 ? " v2-project-image--screens" : ""}${project.id === "todo-personal" ? " v2-project-image--portrait" : ""}`}
           {...previewLinkProps}
         >
-          {project.previews ? project.previews.map(({ src, alt, width, height }) => (
-            <img key={src} src={src} alt={alt} width={width} height={height} loading="lazy" />
-          )) : (
-            <img src={project.id === "iqnix-ptm" ? iqnixLogin : project.image} alt={`${project.title} application preview`} loading="lazy" />
-          )}
+          {previews.map((image, previewIndex) => (
+            <ProjectPreviewImage key={image.src} image={image} priority={index === 0 && previewIndex === 0} />
+          ))}
         </Preview>
         <div className="v2-project-copy"><p className="v2-project-tag">{project.tag}</p><h2>{project.title}<span className="v2-project-subtitle">{project.subtitle}</span></h2><p>{project.description}</p><ul className="v2-stack">{project.stack.map(tech => <li key={tech}>{tech}</li>)}</ul>
           <div className="v2-project-actions">
@@ -314,11 +312,6 @@ function NotFound() {
 
 export default function App() {
   const { pathname } = useLocation();
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "dark");
-    document.body.classList.add("portfolio-v2");
-    return () => document.body.classList.remove("portfolio-v2");
-  }, []);
   useEffect(() => { window.scrollTo(0, 0); document.title = `${pathname === "/" ? "Home" : pathname === "/about" ? "About" : pathname === "/projects" ? "Projects" : "Page not found"} | M1STRELL`; }, [pathname]);
   return <Routes><Route path="/" element={<Landing />} /><Route path="/about" element={<About />} /><Route path="/projects" element={<Projects />} /><Route path="*" element={<NotFound />} /></Routes>;
 }

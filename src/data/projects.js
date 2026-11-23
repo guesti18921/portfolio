@@ -6,9 +6,22 @@ import geraltHome from "../assets/geralt-home.png";
 import geraltAbout from "../assets/geralt-about.png";
 import geraltGallery from "../assets/geralt-gallery.png";
 import geraltWorld from "../assets/geralt-world.png";
+import iqnixLogin from "../assets/iqnix-login.png";
 import iqnixProject from "../assets/iqnix-project.png";
 import iqnixUsers from "../assets/iqnix-users.png";
 import iqnixSettings from "../assets/iqnix-settings.png";
+import iqnixLoginPreview from "../assets/previews/iqnix-login-770.webp?no-inline";
+import todoLogin400 from "../assets/previews/todo-login-400.webp";
+import todoLogin1101 from "../assets/previews/todo-login-1101.webp";
+import tallynOverview260 from "../assets/previews/tallyn-overview-260.webp";
+import tallynOverview758 from "../assets/previews/tallyn-overview-758.webp";
+import tallynAnalysis260 from "../assets/previews/tallyn-analysis-260.webp";
+import tallynAnalysis798 from "../assets/previews/tallyn-analysis-798.webp";
+import geraltHome440 from "../assets/previews/geralt-home-440.webp";
+import geraltHome880 from "../assets/previews/geralt-home-880.webp";
+import geraltHome1600 from "../assets/previews/geralt-home-1600.webp";
+
+const tallynPreviewSizes = "auto, (max-width: 600px) calc(50vw - 1.8rem), 286px";
 
 const tallyn = {
   id: "tallyn",
@@ -60,6 +73,15 @@ export const projectsData = [
     stack: ["PHP 8.2", "Laravel 12", "MySQL 8", "React 19", "MUI 9"],
     image: iqnixProject,
     screenshots: [iqnixProject, iqnixUsers, iqnixSettings],
+    previews: [
+      {
+        alt: "IQNIX PTM application preview",
+        width: 770,
+        height: 618,
+        src: iqnixLoginPreview,
+        original: iqnixLogin,
+      },
+    ],
     liveUrl: null,
     demoNote: "Public demo offline.",
     repositories: [
@@ -89,6 +111,17 @@ export const projectsData = [
     stack: ["JavaScript", "HTML", "CSS", "Supabase"],
     image: todoLogin,
     screenshots: [todoApp, todoLogin],
+    previews: [
+      {
+        alt: "TO-DO application preview",
+        width: 1101,
+        height: 1229,
+        src: todoLogin1101,
+        srcSet: `${todoLogin400} 400w, ${todoLogin1101} 1101w`,
+        sizes: "auto, (max-width: 486px) calc(100vw - 3.125rem), 436px",
+        original: todoLogin,
+      },
+    ],
     liveUrl: "https://todo.m1strell.com/",
     demoNote: null,
     repoUrl: "https://github.com/guesti18921/todo-personal",
@@ -105,8 +138,24 @@ export const projectsData = [
     ],
     liveLabel: "Open web app",
     previews: [
-      { src: tallynOverview, alt: "Tallyn overview with an N26 card", width: 758, height: 1301 },
-      { src: tallynAnalysis, alt: "Tallyn monthly spending breakdown", width: 798, height: 1299 },
+      {
+        alt: "Tallyn overview with an N26 card",
+        width: 758,
+        height: 1301,
+        src: tallynOverview758,
+        srcSet: `${tallynOverview260} 260w, ${tallynOverview758} 758w`,
+        sizes: tallynPreviewSizes,
+        original: tallynOverview,
+      },
+      {
+        alt: "Tallyn monthly spending breakdown",
+        width: 798,
+        height: 1299,
+        src: tallynAnalysis798,
+        srcSet: `${tallynAnalysis260} 260w, ${tallynAnalysis798} 798w`,
+        sizes: tallynPreviewSizes,
+        original: tallynAnalysis,
+      },
     ],
   },
   {
@@ -147,6 +196,17 @@ export const projectsData = [
     stack: ["PHP", "HTML", "CSS", "JavaScript"],
     image: geraltHome,
     screenshots: [geraltHome, geraltAbout, geraltGallery, geraltWorld],
+    previews: [
+      {
+        alt: "Geralt's World application preview",
+        width: 2556,
+        height: 1297,
+        src: geraltHome880,
+        srcSet: `${geraltHome440} 440w, ${geraltHome880} 880w, ${geraltHome1600} 1600w`,
+        sizes: "auto, (max-width: 600px) calc(100vw - 2rem), (max-width: 900px) calc(100vw - 4rem), 800px",
+        original: geraltHome,
+      },
+    ],
     liveUrl: null,
     demoNote: "Public demo offline.",
     repoUrl: "https://github.com/guesti18921/geralt-fan-site",
